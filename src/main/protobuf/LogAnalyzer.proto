@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+package com.loganalyzer;
+
+// The greeting service definition.
+service Analyzer {
+  // Sends a greeting
+  rpc analyzeLog (AnalyzeRequest) returns (AnalyzeReply) {}
+}
+
+// The request message containing the user's name.
+message AnalyzeRequest {
+  string time = 1;
+  string dt = 2;
+}
+
+// The response message containing the greetings
+message AnalyzeReply {
+  string message = 1;
+}
