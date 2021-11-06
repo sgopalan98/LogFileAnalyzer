@@ -143,6 +143,8 @@ scp -i key-pair.pem src/main/resources/buildAndSendLog.sh ec2-user@instanceaddre
 
 - This would have updated the log file in the s3 bucket.
 
+---
+
 ### Http Rest service
 
 - Http Rest service is hosted in Lambda, which is extended as a Http endpoint.
@@ -164,6 +166,7 @@ Follow the below instructions to deploy the lambda functions on AWS.
 
 The lambda function is now deployed on AWS.
 
+---
 
 ### Create an API Gateway endpoint to run the lambda service
 
@@ -212,6 +215,8 @@ The lambda function is now deployed on AWS.
    6. Note the API's Invoke URL.
 
 - Now Http Server is running and this can be tested using the cURL command. This can also be verified by changing the ocnfiguration in application.conf and running the HttpClient program
+
+---
 
 ### gRPC client and server
 

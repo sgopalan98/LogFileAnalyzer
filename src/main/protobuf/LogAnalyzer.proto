@@ -4,7 +4,7 @@ package com.loganalyzer;
 
 // The Analyzer service definition.
 service Analyzer {
-  // Sends a greeting
+  // Analyzes the log request
   rpc analyzeLog (AnalyzeRequest) returns (AnalyzeReply) {}
 }
 
