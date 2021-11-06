@@ -136,7 +136,7 @@ object Parameters:
 
   val FAILED_MESSAGE = getParam("FAILED_MESSAGE", "FAILED")
   
-  val PRINT_RESULT_MESSAGE = getParam("PRINT_RESULT_MESSAGE", "The final result is")
+  val PRINT_RESULT_MESSAGE = getParam("PRINT_RESULT_MESSAGE", "The md5 hash is ")
   
   val GRPC_PORT_NUMBER = getParam("GRPC_PORT_NUMBER", 50051)
 
@@ -148,7 +148,7 @@ object Parameters:
 
   val CHANNEL_SHUTDOWN = getParam("CHANNEL_SHUTDOWN", 5)
 
-  val GRPC_CLIENT_OUTPUT_MESSAGE = getParam("GRPC_CLIENT_OUTPUT_MESSAGE", "OUTPUT: ")
+  val GRPC_CLIENT_OUTPUT_MESSAGE = getParam("GRPC_CLIENT_OUTPUT_MESSAGE", "MD5 Hash: ")
 
   val GRPC_CLIENT_FAILED = getParam("GRPC_CLIENT_FAILED", "RPC Failed: ")
 
