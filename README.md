@@ -10,6 +10,8 @@
 
 The objective of this exercise is to develop two kinds of services: Http Rest and gRPC in AWS and demonstrate the usage of them. 
 
+Explanation video: https://youtu.be/2mnSq-vMkro
+
 ### Architecture
 
 ![Architecture diagram](https://github.com/sgopalan98/LogFileAnalyzer/blob/master/src/main/resources/Architecture.jpg?raw=true)
