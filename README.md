@@ -251,3 +251,11 @@ message AnalyzeReply {
 
 The project uses [ScalaPB](https://scalapb.github.io/) to generate the stubs for the `LogAnalyzer` service and the related protobuf messages. These stubs are generated automatically when this project is compiled using `sbt compile` .
 
+
+### Improvements for the future and Credits
+
+1. Implement gRPC service on AWS using API Gateway
+2. Implement communication between different components in AWS.
+3. Make a cron job in EC2 to periodically generate the log file in S3.
+
+
