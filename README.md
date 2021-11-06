@@ -1,4 +1,4 @@
-~~## Santhanagopalan Krishnamoorthy
+## Santhanagopalan Krishnamoorthy
 
 ---
 ## CS 441 - Engineering Distributed Objects for Cloud Computing
@@ -108,6 +108,41 @@ INFO: MD5 Hash: 74fa32de6a699b6bb3a991748dee9413
 
 ## Components
 
+### EC2 Instance
+
+- EC2 Instance generates the log file and puts it to the s3 bucket which the Http and gRPC accesses.
+
+### Deploying the ec2 instance
+
+1. Open the Amazon EC2 console at https://console.aws.amazon.com/ec2/.
+2. Click on `Launch instance`
+3. Choose AMI, Instance type, configuration
+4. Download the key-pair/Choose an already existing one.
+5. Connect to the instance using the key-pair.
+6. Download git using yum package manager.
+```
+sudo yum install git
+```
+7. Install sbt using yum package manager.
+```
+sudo rm -f /etc/yum.repos.d/bintray-rpm.repo
+curl -L https://www.scala-sbt.org/sbt-rpm.repo > sbt-rpm.repo
+sudo mv sbt-rpm.repo /etc/yum.repos.d/
+sudo yum install sbt
+```
+8. Clone [LogFileGenerator](https://github.com/0x1DOCD00D/LogFileGenerator) repository.
+```
+git clone https://github.com/0x1DOCD00D/LogFileGenerator
+```
+9. scp the buildAndSendLog.sh from resources in this project.
+```
+scp -i key-pair.pem src/main/resources/buildAndSendLog.sh ec2-user@instanceaddress:~
+```
+10. Modify the script to include the correct s3 bucket.
+11. Run the script in the EC2 linux machine.
+
+- This would have updated the log file in the s3 bucket.
+
 ### Http Rest service
 
 - Http Rest service is hosted in Lambda, which is extended as a Http endpoint.
@@ -182,7 +217,7 @@ The lambda function is now deployed on AWS.
 
 - There is no infrastructure required to host gRPC since gRPC server runs in localhost.
 
-#### The protobuf
+#### Protobuf
 
 This project contains the `LogAnalyzer.proto` file which defines the `LogAnalyzer` gRPC service, like so:
 
@@ -210,3 +245,4 @@ message AnalyzeReply {
 ```
 
 The project uses [ScalaPB](https://scalapb.github.io/) to generate the stubs for the `LogAnalyzer` service and the related protobuf messages. These stubs are generated automatically when this project is compiled using `sbt compile` .
+
