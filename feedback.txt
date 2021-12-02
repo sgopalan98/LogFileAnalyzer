@@ -3,7 +3,7 @@ Grader: Vineet Patel
 
 Grading Criteria: 
  - only some basic RESTful service examples from some repos are given and nothing else is done: zero grade;
-	* lambda not submited: -2.5%
+	* lambda not submited (revised): -0.3%
  - having less than five unit and/or integration scalatests: up to 5% lost;
 	* tests present: -0%
  - missing comments and explanations from your program: up to 5% lost;
@@ -24,5 +24,6 @@ Grading Criteria:
 	* documentation exists: -0%
 
 	
-Total Grade: 5.5%
-Comments: I cound not find the python code for your lambda.
+Total Grade: 7.7%
+Comments: I accepted the lambda code, but a small penalty is still there since it wasn't initially in the repo. 
+Otherwise you did a good job!
